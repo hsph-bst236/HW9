@@ -1,0 +1,15 @@
+gym==0.21.0
+gym-super-mario-bros==7.4.0
+nes_py==8.2.1
+numpy==1.24.4
+pillow==10.4.0
+urllib3==2.2.2
+stable-baselines3==1.5.0
+pyglet==1.5.21
+imageio
+wandb
+tensorboard
+nbformat
+tqdm
+matplotlib
+
