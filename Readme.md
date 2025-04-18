@@ -56,12 +56,12 @@ We describe the vanilla policy gradient algorithm here for you to match code wit
 
 - Initialize policy parameters $\theta$ randomly
 - For k = 1, 2, ... do:
-    - Generate $K=$`n_workers` trajectories $\mathcal{D}_k = \{\tau_i| i = 1, 2, ..., K \}$ using policy $\pi_{\theta_k}$, each trajectory $\tau_i$ has $T=$`worker_steps` steps
+    - Generate $K=$`n_workers` trajectories ${D}_k = \{\tau_i| i = 1, 2, ..., K \}$ using policy $\pi_{\theta_k}$, each trajectory $\tau_i$ has $T=$`worker_steps` steps
     - Calculate reward-to-go $\hat{R}_t$ for each trajectory
     - **Actor**: Minimize the loss: $\theta_k = \arg \min_{\theta} \frac{1}{|\mathcal{D}|} \sum_{\tau \in \mathcal{D}} \sum_{t=0}^{T} - \log \pi_{\theta_k}(a_t |s_t) \hat{R}_t$
 
 
-Note $d_i$ is 0/1 value representing whether the game is done at the $i$-th step. Here is the formula for Reward-to-go: $\hat{R}_t = \sum_{i=t}^{T} \gamma^{i-t} (1-d_i)r_i$
+Note $d_i$ is 0/1 value representing whether the game is done at the $i$-th step. Here is the formula for Reward-to-go: $\hat{R}_t = \sum_{i=t}^{T} \gamma^{i-t} (1-d_i)r_i$.
 
 Here is the formula for GAE: 
 
